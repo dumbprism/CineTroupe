@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Micro+5&display=swap');
+        body {
+            background-color : #1A1A1A;
+            font-family : 'Inter';
+            color: white;
+        }
+        #form{
+            display: flex;
+            flex-direction: column;
+            width: 50vw;
+            margin-left:30vw;
+            margin-top: 10vh;
+        }
+        label,input{
+            margin-bottom: 10px;
+        }
+        input{
+            padding: 10px 10px;
+            background-color: #1A1A1A;
+            border: #EBFB5A solid 1px;
+            border-radius: 5px;
+            width: 40rem;
+            color: white;
+            font-family: "Inter";
+        }
+
+        textarea{
+            background-color: #1A1A1A;
+            border: #EBFB5A solid 1px;
+            border-radius: 5px;
+            font-family: "Inter";
+            margin-bottom: 10px;
+            color: white;
+            padding: 5px 5px;
+        }
+
+        #submit{
+            background-color: #EBFB5A;
+            color: #1A1A1A;
+            font-weight: bold;
+            width: 20rem;
+            margin-left: 15vw;
+        }
+        input:focus{
+            border-color: rgb(0, 0, 0);
+        }
+        ::-webkit-input-placeholder {
+            font-style: italic;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Logo.svg" alt="logo" >
+    </header>
+
+    <form action="/" method="post">
+
+        <div id="form">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Sandeep Reddy Vanga">
+    
+            <label for="film">Film</label>
+            <input type="text" name="film" id="film" placeholder="The Terminator">
+    
+            <label for="rating">Rating</label>
+            <input type="number" min="0" max="5" name="rating" id="rating">
+    
+            <label for="review">Review</label>
+            <textarea name="review" id="review" cols="0" rows="10" placeholder="write a review"></textarea>
+    
+            <input type="submit" value="Submit Review" id="submit">
+    
+        </div>
+     
+    </form>
+</body>
+</html>
