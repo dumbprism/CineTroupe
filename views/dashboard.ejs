@@ -10,49 +10,54 @@
             background-color : #1A1A1A;
             font-family : 'Inter';
             color: black;
-            margin: 0px;
         }
 
-        #review-card{
-            width: auto;
+        #review-card {
+            max-width: 40rem;
             height: fit-content;
             background-color: #EBFB5A;
             border: none;
             padding: 20px 10px;
             border-radius: 5px;
+            margin-bottom: 20px;
+            color: #1A1A1A;
         }
 
-        #add{
+        #add {
             padding: 10px 20px;
             font-family: "Inter";
             background-color: #EBFB5A;
             border: none;
             border-radius: 5px;
         }
+
         #add a {
             text-decoration: none;
             color: #1A1A1A;
         }
 
+        #content {
+            color: white;
+            margin-bottom: 0px;
+        }
     </style>
 </head>
 <body>
-
     <div id="content">
-        <h2>Review</h2>
-        <p>View all the</p>
+        <h2>Reviews</h2>
+        <p>View all the recorded reviews by various users</p>
+    </div>
     
-    </div>
-   
-    <div id="review-card">
-        <h1> <%= film %> </h1>
-        <p><em>review by <%=userName %> </em></p>
-        <p><%= review %></p>
-        <p><%= rating %> / 5</p>
-    </div>
+    
+    <% reviews.forEach(review => { %>
+        <div id="review-card">
+            <h1><%= review.film %></h1>
+            <p><em>review by <%= review.username %></em></p>
+            <p><%= review.review %></p>
+            <p><%= review.rating %> / 5</p>
+        </div>
+    <% }); %>
 
-    <button id="add"> <a href="/public/review.html"></a>Add Review </button>
-
-  
+    <button id="add"><a href="review.html">Add Review</a></button>
 </body>
 </html>
