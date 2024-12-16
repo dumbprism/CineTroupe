@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Micro+5&display=swap');
+        body {
+            background-color : #1A1A1A;
+            font-family : 'Inter';
+            color: black;
+            margin: 0px;
+        }
+
+        #review-card{
+            width: auto;
+            height: fit-content;
+            background-color: #EBFB5A;
+            border: none;
+            padding: 20px 10px;
+            border-radius: 5px;
+        }
+
+        #add{
+            padding: 10px 20px;
+            font-family: "Inter";
+            background-color: #EBFB5A;
+            border: none;
+            border-radius: 5px;
+        }
+        #add a {
+            text-decoration: none;
+            color: #1A1A1A;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <h2>Review</h2>
+        <p>View all the</p>
+    
+    </div>
+   
+    <div id="review-card">
+        <h1> <%= film %> </h1>
+        <p><em>review by <%=userName %> </em></p>
+        <p><%= review %></p>
+        <p><%= rating %> / 5</p>
+    </div>
+
+    <button id="add"> <a href="/public/review.html"></a>Add Review </button>
+
+  
+</body>
+</html>
