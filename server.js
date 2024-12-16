@@ -6,6 +6,21 @@ const PORT = 3000
 const app = express()
 
 
+const reviews = [
+    {
+        username : 'alfredo',
+        film: 'harry potter',
+        rating: 4,
+        review : 'very magical'
+    },
+    {
+        username : 'dumbprism',
+        film : 'the florida project',
+        rating : 3,
+        review : "very non surreal yet surreal"
+    }
+]
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("views", {
@@ -19,20 +34,20 @@ app.set("views", __dirname + "/views")
 
 
 app.post('/dashboard', (req, res) => {
-
+    
     const userName = req.body.username
     const film = req.body.film
     const rating = req.body.rating
     const review = req.body.review
 
-    
-
-    res.render('dashboard.ejs',{
-        userName: userName,
-        film: film,
-        rating: rating,
-        review: review
+    reviews.push({
+        username : userName,
+        film  : film ,
+        rating : rating,
+        review : review
     })
+    
+    res.render('dashboard.ejs',{reviews:reviews})
 })
 
 app.get('/review', (req, res) => {
