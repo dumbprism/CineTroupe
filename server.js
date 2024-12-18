@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("views", {
     layout: false
 })
+
 app.use(express.static(__dirname + '/public'))
 app.use('/', mainPageRouter)
 
@@ -34,7 +35,8 @@ app.set("views", __dirname + "/views")
 
 
 app.post('/dashboard', (req, res) => {
-    
+
+   
     const userName = req.body.username
     const film = req.body.film
     const rating = req.body.rating
@@ -48,12 +50,17 @@ app.post('/dashboard', (req, res) => {
     })
     
     res.render('dashboard.ejs',{reviews:reviews})
+
+    
 })
 
 app.get('/review', (req, res) => {
     res.sendFile(path.join(__dirname + "/public", "review.html"))
 })
 
+app.use((req,res) => {
+    res.status(400).render('404')
+})
 
 app.listen(PORT, (err) => {
     if (err) {
